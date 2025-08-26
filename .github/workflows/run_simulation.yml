@@ -22,15 +22,15 @@ jobs:
     - name: Create input directory
       run: mkdir -p input
 
-    # This is the line with the corrected URL
     - name: Download Nigeria OSM Data
       run: |
         echo "Downloading OSM data for Nigeria..."
         wget -q -O input/lagos-latest.osm.pbf https://download.geofabrik.de/africa/nigeria-latest.osm.pbf
         echo "Download complete."
 
+    # This is the corrected command. It explicitly compiles before running.
     - name: Run Simulation
-      run: mvn exec:java
+      run: mvn compile exec:java -Dexec.cleanupDaemonThreads=false
 
     - name: Upload Simulation Results
       uses: actions/upload-artifact@v4
