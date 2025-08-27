@@ -32,7 +32,7 @@
             <artifactId>matsim</artifactId>
             <version>13.0</version>
         </dependency>
-        <!-- THIS IS THE MISSING DEPENDENCY FOR READING OSM FILES -->
+        <!-- This is the required dependency for reading OSM files -->
         <dependency>
             <groupId>org.matsim.contrib</groupId>
             <artifactId>osm</artifactId>
