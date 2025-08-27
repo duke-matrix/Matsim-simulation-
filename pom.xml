@@ -18,7 +18,6 @@
     </properties>
 
     <repositories>
-        <!-- MATSim repository for releases -->
         <repository>
             <id>matsim</id>
             <url>https://repo.matsim.org/repository/matsim</url>
@@ -26,13 +25,15 @@
     </repositories>
 
     <dependencies>
-        <!-- Core MATSim dependency -->
+        <!-- The main MATSim library -->
         <dependency>
             <groupId>org.matsim</groupId>
             <artifactId>matsim</artifactId>
             <version>13.0</version>
         </dependency>
-        <!-- This is the required dependency for reading OSM files -->
+        
+        <!-- The missing dependency for reading OSM files -->
+        <!-- Note: The artifactId is 'osm', not 'matsim-osm' -->
         <dependency>
             <groupId>org.matsim.contrib</groupId>
             <artifactId>osm</artifactId>
@@ -46,10 +47,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
